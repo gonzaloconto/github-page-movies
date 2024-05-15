@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Welcome to Our Cinema</h1>
+    <nav>
+        <ul>
+            <li><a href="movies.html">Movies Catalog</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+            <li><a href="profile.html">User Profile</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section class="slider">
+        <div class="slides">
+            <img src="movie1.jpg" alt="Movie 1">
+            <img src="movie2.jpg" alt="Movie 2">
+            <img src="movie3.jpg" alt="Movie 3">
+        </div>
+        <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+        <button class="next" onclick="plusSlides(1)">&#10095;</button>
+    </section>
+    <section>
+        <h2>Now Showing</h2>
+        <p>Discover the latest movies in our cinema. Click on 'Movies Catalog' to see more.</p>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Cinema. All rights reserved.</p>
+</footer>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        let i;
+        const slides = document.querySelectorAll('.slides img');
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+    }
+</script>
+</body>
+</html>
